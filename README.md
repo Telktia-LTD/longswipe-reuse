@@ -5,15 +5,25 @@ This repository contains a collection of reusable components for the Longswipe a
 ## Project Structure
 
 ├── /emitterx # Emitting components
+
 ├── /helperfuncx # Helper Functions management
+
 ├── /interfacesx # Contain all reusable interfaces
+
 ├── /paystackx # Paystack Payment middleware
+
 ├── /securityx # Security functions
+
 ├── /servicehelpers # Service helpers middleware
+
 ├── /sms # SMS functions
+
 ├── /telegramx # Telegram middleware
+
 ├── /tokenx # Utility functions
+
 ├── /validationx # Common middleware
+
 ├── /whatsappx # Whatsapp messaging functions
 
 ## Installation
