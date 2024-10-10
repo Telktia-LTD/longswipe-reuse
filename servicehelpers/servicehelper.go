@@ -22,19 +22,17 @@ type ServiceHelper interface {
 }
 
 type serviceHelperClient struct {
-	baseURL     string
-	paystackKey string
-	secretKey   string
-	client      *http.Client
+	baseURL   string
+	secretKey string
+	client    *http.Client
 }
 
-func NewServiceHelperClient(baseURL, paystackKey, secretKey string) ServiceHelper {
+func NewServiceHelperClient(baseURL, secretKey string) ServiceHelper {
 
 	return &serviceHelperClient{
-		baseURL:     baseURL,
-		paystackKey: paystackKey,
-		secretKey:   secretKey,
-		client:      &http.Client{},
+		baseURL:   baseURL,
+		secretKey: secretKey,
+		client:    &http.Client{},
 	}
 }
 
@@ -169,7 +167,7 @@ func (p *serviceHelperClient) makeRequest(method, endpoint string, body interfac
 
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Authorization", "Bearer "+token)
-	req.Header.Set("secret", p.paystackKey)
+	req.Header.Set("secret", p.secretKey)
 
 	resp, err := p.client.Do(req)
 	if err != nil {
