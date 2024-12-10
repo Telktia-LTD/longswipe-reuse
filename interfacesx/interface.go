@@ -1118,3 +1118,10 @@ type OnfidoKYCData struct {
 	WorkFlowID string                  `json:"workFlowID"`
 	SdkToken   string                  `json:"sdkToken"`
 }
+
+type BusinessResponse struct {
+	Message string                `json:"message"`
+	Code    int                   `json:"code"`
+	Status  string                `json:"status"`
+	Data    FetchBusinessResponse `json:"data"`
+}
