@@ -508,6 +508,7 @@ type BankAccount struct {
 	BankCode      string    `json:"bankCode"`
 	AccountName   string    `json:"accountName"`
 	IsConfirmed   bool      `json:"isConfirmed"`
+	IsDefault     bool      `json:"isDefault"`
 	CreatedAt     time.Time `json:"createdAt"`
 	UpdatedAt     time.Time `json:"updatedAt"`
 }
