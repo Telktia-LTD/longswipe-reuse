@@ -1086,3 +1086,7 @@ type JWTTokenStoreRequest struct {
 	TelegramID string `json:"telegramID" validate:"required"`
 	Token      string `json:"token" validate:"required"`
 }
+
+type UpdatePushNotificationTokenRequest struct {
+	Token string `json:"token" validate:"required"`
+}
