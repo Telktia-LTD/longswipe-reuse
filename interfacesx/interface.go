@@ -1105,3 +1105,15 @@ type KYCWebhook struct {
 type KYCWebhooksResponse struct {
 	Webhooks []KYCWebhook `json:"webhooks"`
 }
+
+type OnfidoApplicantResponse struct {
+	ApplicantId string `json:"applicantId"`
+	FirstName   string `json:"firstName"`
+	LastName    string `json:"lastName"`
+}
+
+type OnfidoKYCData struct {
+	Applicant  OnfidoApplicantResponse `json:"applicant"`
+	WorkFlowID string                  `json:"workFlowID"`
+	SdkToken   string                  `json:"sdkToken"`
+}
