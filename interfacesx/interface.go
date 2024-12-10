@@ -1125,3 +1125,29 @@ type BusinessResponse struct {
 	Status  string                `json:"status"`
 	Data    FetchBusinessResponse `json:"data"`
 }
+
+type FetchBusinessByEmailResponse struct {
+	Message string                  `json:"message"`
+	Code    int                     `json:"code"`
+	Status  string                  `json:"status"`
+	Data    FetchBusinessByResponse `json:"data"`
+}
+
+type VerifyTransactionPinRequest struct {
+	TransactionPin string `json:"transactionPin" validate:"required"`
+}
+
+type SetDefaultAccount struct {
+	EmailPhoneOrID string `json:"emailPhoneOrID" validate:"required"`
+	AccountID      string `json:"accountId" validate:"required"`
+	IsDefault      bool   `json:"isDefault" validate:"required"`
+}
+
+type FetchUsersResponse struct {
+	Message string `json:"message"`
+	Code    int    `json:"code"`
+	Status  string `json:"status"`
+	Data    struct {
+		Users []UserResponse `json:"users"`
+	} `json:"data"`
+}
