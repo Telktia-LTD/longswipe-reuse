@@ -1043,3 +1043,46 @@ type RedeemedVoucherData struct {
 	Amount             float64   `json:"amount"`
 	IsMerchant         bool      `json:"isMerchant"`
 }
+
+type LoginWithFingerprintRequest struct {
+	Token string `json:"token" validate:"required"`
+}
+
+type LoginWithPinRequest struct {
+	Pin   string `json:"pin" validate:"required"`
+	Email string `json:"email" validate:"required"`
+}
+
+type BusinessAccountRequest struct {
+	BusinessName        string `json:"businessName" validate:"required"`
+	BusinessDescription string `json:"businessDescription" validate:"required"`
+	BusinessAddress     string `json:"businessAddress" validate:"required"`
+	BusinessEmail       string `json:"businessEmail" validate:"required,email"`
+	TradingName         string `json:"tradingName" validate:"omitempty"`
+	Logo                string `json:"logo" validate:"required"`
+	BusinessCertificate string `json:"businessCertificate" validate:"omitempty"`
+}
+
+type AddCollectorRequest struct {
+	CollectorID string `json:"collectorID" validate:"required"`
+	BusinessID  string `json:"businessID" validate:"required"`
+}
+
+type FetchBusinessResponse struct {
+	ID                  uuid.UUID      `json:"id"`
+	UserID              uuid.UUID      `json:"userID"`
+	BusinessName        string         `json:"businessName"`
+	BusinessDescription string         `json:"businessDescription"`
+	BusinessAddress     string         `json:"businessAddress"`
+	BusinessEmail       string         `json:"businessEmail"`
+	TradingName         string         `json:"tradingName"`
+	BusinessCertificate string         `json:"businessCertificate"`
+	Logo                string         `json:"logo"`
+	MerchantCode        string         `json:"merchantCode"`
+	Collectors          []UserResponse `json:"collectors"`
+}
+
+type JWTTokenStoreRequest struct {
+	TelegramID string `json:"telegramID" validate:"required"`
+	Token      string `json:"token" validate:"required"`
+}
