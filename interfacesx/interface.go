@@ -1090,3 +1090,18 @@ type JWTTokenStoreRequest struct {
 type UpdatePushNotificationTokenRequest struct {
 	Token string `json:"token" validate:"required"`
 }
+
+type KYCWebhook struct {
+	ID             string   `json:"id"`
+	URL            string   `json:"url"`
+	Enabled        bool     `json:"enabled"`
+	Href           string   `json:"href"`
+	Token          string   `json:"token"`
+	Environments   []string `json:"environments"`
+	Events         []string `json:"events"`
+	PayloadVersion int      `json:"payload_version"`
+}
+
+type KYCWebhooksResponse struct {
+	Webhooks []KYCWebhook `json:"webhooks"`
+}
