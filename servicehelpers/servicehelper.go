@@ -133,7 +133,6 @@ func (p *serviceHelperClient) VerifyTransactionPin(pin string, token string) (*b
 		"transactionPin": pin,
 	}
 
-	logrus.Infof("Request: %v", request)
 	res, err := p.makeRequest("POST", "microservices/verify-transaction-pin", request, token)
 	if err != nil {
 		return nil, err
@@ -158,7 +157,6 @@ func (p *serviceHelperClient) makeRequest(method, endpoint string, body interfac
 			return nil, err
 		}
 	}
-	logrus.Infof("Request Body: %v", url)
 
 	req, err := http.NewRequest(method, url, bytes.NewBuffer(requestBody))
 	if err != nil {
